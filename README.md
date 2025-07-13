@@ -16,3 +16,13 @@ This site is built with Eleventy and Cloudflare Pages. Images are generated with
 4. In your Pages project settings, set the environment variables `OPENAI_API_KEY`, `CF_API_TOKEN`, `CF_ACCOUNT_ID`, and `CF_IMAGE_DELIVERY_KEY` (for signing URLs).
 5. Optionally deploy the `sign_image_worker.js` Worker to generate expiring URLs.
 6. Purge the cache after the first deploy so new assets appear.
+
+## Cleaning up branches on GitHub
+
+If you need to delete all branches except `main`, export `GITHUB_TOKEN`, `REPO_OWNER`, and `REPO_NAME` then run:
+
+```bash
+python cleanup_branches.py
+```
+
+The script calls the GitHub REST API to remove each branch after listing them. It stops on any error.
