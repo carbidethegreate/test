@@ -1,0 +1,12 @@
+{
+  "title": "Smith & Associates, LLC",
+  "url": "https://example.com",
+  "description": "Opelika attorneys dedicated to serving Alabama clients.",
+  "address": {
+    "street": "123 Main Street",
+    "city": "Opelika",
+    "state": "AL",
+    "zip": "36801",
+    "phone": "555-123-4567"
+  }
+}

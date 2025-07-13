@@ -1,0 +1,11 @@
+---
+layout: base
+title: "Glossary of Alabama Terms"
+description: "Quick references for key Alabama legal terms and locations."
+---
+<h1>Glossary</h1>
+<ol>
+{% for county in counties %}
+<li>{{ county }}</li>
+{% endfor %}
+</ol>
