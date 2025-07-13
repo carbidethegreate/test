@@ -27,10 +27,11 @@
 <body>
 {% include "header.html" %}
   <main class="container">
-    {{ content | safe }}
-  </main>
   <p class="disclaimer">No representation is made that the quality of legal services to be performed is greater than the quality of legal services performed by other lawyers.</p>
   {% include "footer.html" %}
+  {{ content | safe }}
+</main>
+{% include "footer.html" %}
 <script src="/assets/nav.js" defer></script>
 </body>
 </html>
