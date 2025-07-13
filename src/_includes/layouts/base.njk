@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ description | default(site.description) }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ ogtitle or title }}">
+  <meta property="og:description" content="{{ ogdesc or description | default(site.description) }}">
+  <meta property="og:type" content="{{ ogtype or 'website' }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {% if ogimage %}<meta property="og:image" content="{{ images[ogimage] | sign }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ ogtitle or title }}">
+  <meta name="twitter:description" content="{{ ogdesc or description | default(site.description) }}">
+  {% if ogimage %}<meta name="twitter:image" content="{{ images[ogimage] | sign }}">{% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}"
+  }
+  </script>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+{% include "header.html" %}
+  <main class="container">
+    {{ content | safe }}
+  </main>
+  {% include "footer.html" %}
+  <script src="/assets/nav.js" defer></script>
+</body>
+</html>
