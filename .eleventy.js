@@ -1,3 +1,4 @@
+
 const crypto = require('crypto');
 
 function signUrl(url){
@@ -17,6 +18,7 @@ module.exports = function(eleventyConfig){
   eleventyConfig.addGlobalData("img", () => {
     const map = require("./image_map.json");
     return (label, alt) => `<img src="${signUrl(map[label])}" alt="${alt}" loading="lazy" width="100%">`;
+
   });
   eleventyConfig.addLayoutAlias("base", "layouts/base.njk");
   return {
