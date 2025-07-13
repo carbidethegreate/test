@@ -54,7 +54,8 @@ def main():
             resp = requests.post(
                 f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT_ID}/images/v1",
                 headers={"Authorization": f"Bearer {CF_API_TOKEN}"},
-                data={"requireSignedURLs": "false", "id": f"{label}-{key}"},
+
+                data={"requireSignedURLs": "true", "id": f"{label}-{key}"},
                 files={"file": (f"{label}-{key}", data, mime)},
             )
             fail_on_bad_status(resp)
@@ -86,10 +87,10 @@ def main():
     OUTPUT_FILE.write_text(json.dumps(result, indent=2))
     print("UPLOAD OK")
 
-
 if __name__ == "__main__":
     try:
         main()
     except Exception as e:
         print(e, file=sys.stderr)
+re
         sys.exit(1)
