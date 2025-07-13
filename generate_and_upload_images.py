@@ -1,9 +1,11 @@
+# Requires: requests pillow
 import os
 import json
 import requests
 from pathlib import Path
-import tempfile
+from io import BytesIO
 import sys
+from PIL import Image
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 CF_API_TOKEN = os.environ.get("CF_API_TOKEN")
@@ -30,38 +32,56 @@ def main():
     for item in images:
         label = item["label"]
         prompt = item["prompt"]
-        size = item["size"]
 
-        # Generate image via OpenAI
+        # Generate base image via OpenAI (1024x1024 PNG)
         ai_resp = requests.post(
             "https://api.openai.com/v1/images/generations",
             headers={
                 "Authorization": f"Bearer {OPENAI_API_KEY}",
                 "Content-Type": "application/json",
             },
-            json={"prompt": prompt, "n": 1, "size": size, "response_format": "url"},
+            json={"prompt": prompt, "n": 1, "size": "1024x1024", "response_format": "url"},
         )
         fail_on_bad_status(ai_resp)
         image_url = ai_resp.json()["data"][0]["url"]
 
-        # Download image to temp file
+        # Download and process the image
         img_resp = requests.get(image_url)
         fail_on_bad_status(img_resp)
-        with tempfile.NamedTemporaryFile(delete=False) as tmp:
-            tmp.write(img_resp.content)
-            temp_path = tmp.name
+        base_img = Image.open(BytesIO(img_resp.content))
 
-        # Upload to Cloudflare Images
-        with open(temp_path, "rb") as f:
-            cf_resp = requests.post(
+        def upload_bytes(key: str, data: bytes, mime: str) -> str:
+            resp = requests.post(
                 f"https://api.cloudflare.com/client/v4/accounts/{CF_ACCOUNT_ID}/images/v1",
                 headers={"Authorization": f"Bearer {CF_API_TOKEN}"},
-                data={"requireSignedURLs": "false"},
-                files={"file": f},
+                data={"requireSignedURLs": "false", "id": f"{label}-{key}"},
+                files={"file": (f"{label}-{key}", data, mime)},
             )
-        os.unlink(temp_path)
-        fail_on_bad_status(cf_resp)
-        result[label] = cf_resp.json()["result"]["variants"][0]
+            fail_on_bad_status(resp)
+            return resp.json()["result"]["variants"][0]
+
+        result[label] = {}
+        # Upload original
+        buffer = BytesIO()
+        base_img.save(buffer, format="PNG")
+        result[label]["orig"] = upload_bytes("orig", buffer.getvalue(), "image/png")
+
+        sizes = {
+            "og": (1200, 630),
+            "hero": (1600, 900),
+            "sm": (640, 640),
+        }
+
+        for key, sz in sizes.items():
+            resized = base_img.resize(sz, Image.LANCZOS)
+            buffer = BytesIO()
+            if key == "sm":
+                resized.save(buffer, format="PNG")
+                mime = "image/png"
+            else:
+                resized.save(buffer, format="JPEG", quality=85)
+                mime = "image/jpeg"
+            result[label][key] = upload_bytes(key, buffer.getvalue(), mime)
 
     OUTPUT_FILE.write_text(json.dumps(result, indent=2))
     print("UPLOAD OK")
