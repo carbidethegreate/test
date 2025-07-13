@@ -5,7 +5,7 @@
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
-    "generate-images": "node generate_and_upload_images.js"
+    "generate-images": "python3 generate_and_upload_images.py"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.0"
