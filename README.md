@@ -6,7 +6,7 @@ This site is built with Eleventy and Cloudflare Pages. Images are generated with
 
 1. Run the image pipeline:
    ```bash
-   python generate_and_upload_images.py
+   node generate_and_upload_images.js
    ```
 2. Build the static site:
    ```bash
