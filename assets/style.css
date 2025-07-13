@@ -1,0 +1,52 @@
+/* Global stylesheet for the Alabama law site */
+
+:root{
+  --c-dark1:#261D19;
+  --c-dark2:#594E4A;
+  --c-light1:#D9CCC1;
+  --c-light2:#BFB1A4;
+  --c-light3:#A6978A;
+}
+
+html{scroll-behavior:smooth}
+body{
+  font:16px/1.6 "Open Sans",sans-serif;
+  color:var(--c-dark1);
+  background:#fff;
+  margin:0;
+}
+
+h1,h2,h3{
+  font-family:"Merriweather",serif;
+  color:var(--c-dark1);
+  margin:0 0 .5em;
+}
+h2{letter-spacing:.5px;text-transform:uppercase}
+
+.container{max-width:1200px;margin:0 auto;padding:0 1rem}
+header{
+  background:var(--c-dark1);
+  color:var(--c-light1);
+  position:sticky;top:0;z-index:100;
+}
+nav ul{display:flex;gap:1.5rem;list-style:none;padding:0;margin:0}
+.menu-toggle{display:none;background:none;border:0;font-size:1.75rem;color:var(--c-light1)}
+
+.btn{display:inline-block;padding:.65rem 1.25rem;background:var(--c-dark2);color:#fff;text-decoration:none;border-radius:4px;transition:background .3s}
+.btn:hover{background:var(--c-dark1)}
+
+section{padding:4rem 0}
+section:nth-of-type(even){background:var(--c-light1)}
+
+footer{background:var(--c-dark2);color:var(--c-light1);padding:2rem 1rem;font-size:.875rem}
+
+@media(max-width:768px){
+  nav ul{flex-direction:column;display:none}
+  nav.open ul{display:flex}
+  .menu-toggle{display:block}
+}
+
+@keyframes fadeIn{from{opacity:0;translate:0 1rem;}to{opacity:1;translate:0 0}}
+.fade-in{animation:fadeIn .6s ease both}
+
+.disclaimer{background:var(--c-light2);color:var(--c-dark1);padding:1rem;font-size:.9rem}
