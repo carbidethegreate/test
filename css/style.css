@@ -196,7 +196,7 @@ section {
   Header & Navigation
 ------------------------------------*/
 .header {
-  background-color: var(--color-dark1);
+  background-color: var(--color-dark2);
   color: var(--color-light1);
   position: sticky;
   top: 0;
@@ -259,7 +259,7 @@ section {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: var(--color-dark1);
+    background-color: var(--color-dark2);
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--transition-speed) ease;
