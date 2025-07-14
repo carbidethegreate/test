@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 NAV_TEMPLATE = """
    <div class="navbar container">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="{home_link}">
      Gabriel Smith Attorney at Law
     </a>
     <button aria-label="Open navigation" class="menu-toggle">
@@ -11,32 +11,32 @@ NAV_TEMPLATE = """
     </button>
     <ul class="navbar-menu">
      <li>
-      <a {home_class} href="/index.html">
+      <a {home_class} href="{home_link}">
        <i class="fa-solid fa-house" aria-hidden="true"></i> Home
       </a>
      </li>
      <li>
-      <a {practice_class} href="/practice-areas/index.html">
+      <a {practice_class} href="{practice_link}">
        <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Practice Areas
       </a>
      </li>
      <li>
-      <a {about_class} href="/about.html">
+      <a {about_class} href="{about_link}">
        <i class="fa-solid fa-user" aria-hidden="true"></i> About
       </a>
      </li>
      <li>
-      <a {blog_class} href="/resources/blog.html">
+      <a {blog_class} href="{blog_link}">
        <i class="fa-solid fa-newspaper" aria-hidden="true"></i> Blog
       </a>
      </li>
      <li>
-      <a {faq_class} href="/resources/faq.html">
+      <a {faq_class} href="{faq_link}">
        <i class="fa-solid fa-circle-question" aria-hidden="true"></i> FAQ
       </a>
      </li>
      <li>
-      <a class="btn{contact_current}" href="/contact.html">
+      <a class="btn{contact_current}" href="{contact_link}">
        <i class="fa-solid fa-phone" aria-hidden="true"></i> Contact
       </a>
      </li>
@@ -66,6 +66,19 @@ for path in html_files:
             div.decompose()
 
     rel = os.path.relpath(path, '.').replace(os.sep, '/')
+    base_dir = os.path.dirname(path)
+
+    def rel_to(target):
+        return os.path.relpath(target, base_dir).replace(os.sep, '/')
+
+    links = {
+        'home_link': rel_to('index.html'),
+        'practice_link': rel_to('practice-areas/index.html'),
+        'about_link': rel_to('about.html'),
+        'blog_link': rel_to('resources/blog.html'),
+        'faq_link': rel_to('resources/faq.html'),
+        'contact_link': rel_to('contact.html'),
+    }
 
     home_class = 'class="current"' if rel == 'index.html' else ''
     practice_class = 'class="current"' if rel.startswith('practice-areas/') else ''
@@ -79,7 +92,8 @@ for path in html_files:
                                    about_class=about_class or '',
                                    blog_class=blog_class or '',
                                    faq_class=faq_class or '',
-                                   contact_current=contact_current)
+                                   contact_current=contact_current,
+                                   **links)
 
     header.insert(0, BeautifulSoup(nav_html, 'html.parser'))
 
