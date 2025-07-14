@@ -2,44 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Contact - Gabriel Smith Attorney</title>
+  <meta name="description" content="Get in touch with Gabriel Smith – schedule a free consultation by phone, email, or using our online form.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Gabriel Law Firm</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-yH+xTq5Vf3L7hIwrKyYVJZZzKzbwQ6VykBLL8GMDJ9ZhDJW60F7uO3cu6UytzszbmWzxubUAN4+Y3qFjqZ4gJw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Gabriel Smith">
+  <meta property="og:description" content="Contact information and consultation request for Gabriel Smith, Opelika attorney">
+  <meta property="og:url" content="https://gabriel-smith-opelika-attorney.com/contact.html">
+  <meta property="og:image" content="https://gabriel-smith-opelika-attorney.com/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Gabriel Smith">
+  <meta name="twitter:description" content="Contact information and consultation request for Gabriel Smith, Opelika attorney">
+  <meta name="twitter:image" content="https://gabriel-smith-opelika-attorney.com/images/og-image.jpg">
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="navbar container">
-      <a href="index.html" class="logo">Gabriel Smith Law</a>
-      <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
-      <nav>
-        <ul>
-          <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-          <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-      </nav>
+      <a href="index.html" class="navbar-brand">Gabriel Smith Attorney at Law</a>
+      <button class="menu-toggle" aria-label="Open navigation">&#9776;</button>
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="types-of-law.html">Types of Law</a></li>
+        <li><a href="alabama-courts.html">Courts in Alabama</a></li>
+        <li><a href="practice-areas.html">Areas of Practice in AL</a></li>
+        <li><a href="blog.html">Attorney's Blog</a></li>
+        <li><a href="links.html">Links</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="contact.html" class="btn current">Contact</a></li>
+      </ul>
     </div>
   </header>
-  <section class="hero">
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p class="drop-cap">Reach the Law Office of Gabriel Smith LLC by phone or email. We look forward to discussing your legal needs.</p>
-    </div>
-  </section>
-  <section>
-    <div class="container contact-info">
-      <div class="contact-item"><i class="material-icons">phone</i> <a href="tel:+13347501729">(334) 750-1729</a></div>
-      <div class="contact-item"><i class="material-icons">email</i> <a href="mailto:gabrieljoseph.smith@gmail.com">gabrieljoseph.smith@gmail.com</a></div>
-      <div class="contact-item"><i class="material-icons">location_on</i> Opelika, AL 36801</div>
-    </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2024 Law Office of Gabriel Smith LLC</p>
+  <main class="container">
+    <h1>Contact Gabriel Smith</h1>
+    <p>Ready to discuss your legal needs? Gabriel Smith offers free initial consultations. Reach out today by phone, email, or the form below.</p>
+
+    <section id="contact-info">
+      <h2>Contact Information</h2>
+      <ul class="contact-details">
+        <li><strong>Phone:</strong> <a href="tel:13347501729">(334) 750-1729</a> (Call or text, available 8am-6pm)</li>
+        <li><strong>Email:</strong> <a href="mailto:gabriel.smith.attorney@example.com">gabriel.smith.attorney@example.com</a></li>
+        <li><strong>Office:</strong> Downtown Opelika, AL (by appointment only)</li>
+      </ul>
+      <p><strong>Note:</strong> Email or the form is a convenient way to request a consultation. For urgent matters, calling is recommended.</p>
+    </section>
+
+    <section id="contact-form-section">
+      <h2>Send a Message</h2>
+      <form id="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="yourname@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Optional phone number">
+        </div>
+        <div class="form-group">
+          <label for="message">How can we help you?</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Briefly describe your legal issue or question"></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p class="disclaimer">*Submitting this form does not create an attorney-client relationship. Please do not include confidential information.</p>
+    </section>
+
+    <section id="hours-location">
+      <h2>Hours & Location</h2>
+      <p><strong>Hours:</strong> Monday - Friday, 9:00 AM – 5:00 PM (weekend consultations by appointment).</p>
+      <p><strong>Location:</strong> Gabriel serves clients throughout Lee County and East Alabama. Meetings are available in person at his Opelika office or virtually via phone/Zoom.</p>
+    </section>
+
+    <section id="service-areas">
+      <h2>Service Areas</h2>
+      <p>Located in Opelika, Gabriel regularly works with clients from Auburn, Beauregard, Phenix City, and surrounding communities. He is also licensed to practice across Alabama and can handle cases statewide (and will refer you to trusted attorneys for matters outside his region if needed).</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Law Office of Gabriel Smith. All rights reserved.</p>
+      <p>Disclaimer: This website is for informational purposes only and does not form a lawyer/client relationship...</p>
+    </div>
   </footer>
+
   <script src="js/menu.js"></script>
 </body>
 </html>
