@@ -9,6 +9,14 @@
   --color-light3: #A6978A;  /* taupe accent */
   --color-accent: #8C544E;  /* subtle accent */
 
+  /* Footer customization */
+  --footer-bg-start: #594E4A;
+  --footer-bg-end: #261D19;
+  --footer-divider: #71655F;
+  --footer-link-hover: #F5EEE6;
+  --footer-padding-y: 2.5rem;
+  --footer-text-size: 0.875rem;
+
   --transition-speed: 0.3s;
   --border-radius: 4px;
 
@@ -412,29 +420,77 @@ textarea { resize: vertical; }
   Footer
 ------------------------------------*/
 .footer {
-  background: linear-gradient(180deg, var(--color-dark2), var(--color-dark1));
+  background: linear-gradient(180deg, var(--footer-bg-start), var(--footer-bg-end));
   color: var(--color-light1);
-  padding: 2rem 0;
+  padding: var(--footer-padding-y) 0;
   text-align: center;
-  font-size: 0.875rem;
-  margin-top: 2rem;
+  font-size: var(--footer-text-size);
+  margin-top: 3rem;
+  border-top: 3px solid var(--footer-divider);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--footer-divider), transparent);
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1100px;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  flex: 1 1 100%;
 }
 
 .footer a {
   color: var(--color-light1);
   text-decoration: none;
-  transition: color var(--transition-speed) ease;
-  margin: 0 0.25rem;
+  transition: color var(--transition-speed) ease, opacity var(--transition-speed) ease;
+  margin: 0 0.5rem;
+  opacity: 0.85;
 }
 
 .footer a:hover,
 .footer a:focus {
-  color: var(--color-light3);
+  color: var(--footer-link-hover);
   text-decoration: underline;
+  opacity: 1;
 }
 
 .footer i {
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
+  color: var(--footer-link-hover);
+}
+
+.footer [class^="fa-"],
+.footer [class*=" fa-"] {
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer p {
+    flex-basis: auto;
+  }
 }
 
 /*------------------------------------
