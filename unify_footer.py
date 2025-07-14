@@ -1,15 +1,7 @@
 import os
 from bs4 import BeautifulSoup
 
-FOOTER_TEMPLATE = """<footer class=\"footer\">
-   <div class=\"container\">
-    <p>Call <a href=\"tel:+13347501729\">(334) 750-1729</a> or email <a href=\"mailto:Gabrielthecryptolawyer@gmail.com\">Gabrielthecryptolawyer@gmail.com</a></p>
-    <p>Downtown Opelika, AL</p>
-    <p><a href=\"https://www.facebook.com/GabrielSmithAttorney/\">Facebook</a></p>
-    <p>\u00a9 2025 Law Office of Gabriel Smith. All rights reserved.</p>
-    <p><a href=\"{disclaimer_path}\">Disclaimer</a></p>
-   </div>
-  </footer>"""
+FOOTER_TEMPLATE = """<footer class=\"footer\">\n   <div class=\"container\">\n    <p><i class=\"fa-solid fa-phone\" aria-hidden=\"true\"></i> <a href=\"tel:+13347501729\">(334) 750-1729</a> or <i class=\"fa-solid fa-envelope\" aria-hidden=\"true\"></i> <a href=\"mailto:Gabrielthecryptolawyer@gmail.com\">Gabrielthecryptolawyer@gmail.com</a></p>\n    <p><i class=\"fa-solid fa-map-marker-alt\" aria-hidden=\"true\"></i> Downtown Opelika, AL</p>\n    <p><a href=\"https://www.facebook.com/GabrielSmithAttorney/\">Facebook</a></p>\n    <p>\u00a9 2025 Law Office of Gabriel Smith. All rights reserved.</p>\n    <p><a href=\"{disclaimer_path}\">Disclaimer</a></p>\n   </div>\n  </footer>"""
 
 html_files = []
 for root, dirs, files in os.walk('.'):
