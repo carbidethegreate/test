@@ -1,7 +1,7 @@
 import os
 from bs4 import BeautifulSoup
 
-FOOTER_TEMPLATE = """<footer class=\"footer\">\n   <div class=\"container\">\n    <p><i class=\"fa-solid fa-phone\" aria-hidden=\"true\"></i> <a href=\"tel:+13347501729\">(334) 750-1729</a> or <i class=\"fa-solid fa-envelope\" aria-hidden=\"true\"></i> <a href=\"mailto:Gabrielthecryptolawyer@gmail.com\">Gabrielthecryptolawyer@gmail.com</a></p>\n    <p><i class=\"fa-solid fa-map-marker-alt\" aria-hidden=\"true\"></i> Downtown Opelika, AL</p>\n    <p><a href=\"https://www.facebook.com/GabrielSmithAttorney/\">Facebook</a></p>\n    <p>\u00a9 2025 Law Office of Gabriel Smith. All rights reserved.</p>\n    <p><a href=\"{disclaimer_path}\">Disclaimer</a></p>\n   </div>\n  </footer>"""
+FOOTER_TEMPLATE = """<footer class=\"footer\">\n   <div class=\"container\">\n    <p class=\"footer-tagline\">Trusted Opelika Attorney \u2013 Committed to Your Rights &amp; Future</p>\n    <p><i class=\"fa-solid fa-phone\" aria-hidden=\"true\"></i> <a href=\"tel:+13347501729\">(334) 750-1729</a> or <i class=\"fa-solid fa-envelope\" aria-hidden=\"true\"></i> <a href=\"mailto:Gabrielthecryptolawyer@gmail.com\">Gabrielthecryptolawyer@gmail.com</a></p>\n    <p><i class=\"fa-solid fa-map-marker-alt\" aria-hidden=\"true\"></i> Downtown Opelika, AL</p>\n    <p><a href=\"https://www.facebook.com/GabrielSmithAttorney/\">Facebook</a></p>\n    <p>\u00a9 2025 Law Office of Gabriel Smith. All rights reserved.</p>\n    <p><a href=\"{disclaimer_path}\">Disclaimer</a></p>\n   </div>\n  </footer>"""
 
 html_files = []
 for root, dirs, files in os.walk('.'):
