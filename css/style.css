@@ -556,3 +556,20 @@ hr {
   margin: 0.25rem 0 0.75rem 1.25rem;
 }
 
+
+/* Footer Branding Section */
+.footer-branding {
+  background: linear-gradient(180deg, var(--color-dark2), var(--color-dark1));
+  color: var(--color-light1);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 1rem;
+}
+.footer-branding h1 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+.footer-branding p {
+  margin: 0;
+}
+
