@@ -612,3 +612,15 @@ hr {
   margin: 0.25rem 0 0.75rem 1.25rem;
 }
 
+
+/* Footer Callout */
+.footer-callout {
+  background-color: var(--color-light2);
+  color: var(--color-dark1);
+  text-align: center;
+  padding: 2rem 0;
+}
+.footer-callout h1 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
