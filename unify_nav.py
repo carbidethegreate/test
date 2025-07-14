@@ -12,32 +12,32 @@ NAV_TEMPLATE = """
     <ul class="navbar-menu">
      <li>
       <a {home_class} href="/index.html">
-       Home
+       <i class="fa-solid fa-house" aria-hidden="true"></i> Home
       </a>
      </li>
      <li>
       <a {practice_class} href="/practice-areas/index.html">
-       Practice Areas
+       <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Practice Areas
       </a>
      </li>
      <li>
       <a {about_class} href="/about.html">
-       About
+       <i class="fa-solid fa-user" aria-hidden="true"></i> About
       </a>
      </li>
      <li>
       <a {blog_class} href="/resources/blog.html">
-       Blog
+       <i class="fa-solid fa-newspaper" aria-hidden="true"></i> Blog
       </a>
      </li>
      <li>
       <a {faq_class} href="/resources/faq.html">
-       FAQ
+       <i class="fa-solid fa-circle-question" aria-hidden="true"></i> FAQ
       </a>
      </li>
      <li>
       <a class="btn{contact_current}" href="/contact.html">
-       Contact
+       <i class="fa-solid fa-phone" aria-hidden="true"></i> Contact
       </a>
      </li>
     </ul>
