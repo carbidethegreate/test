@@ -1,0 +1,293 @@
+/*------------------------------------
+  Variables & Base
+------------------------------------*/
+:root {
+  --color-dark1: #261D19;   /* near-black espresso */
+  --color-dark2: #594E4A;   /* dark brown/gray */
+  --color-light1: #D9CCC1;  /* light beige */
+  --color-light2: #BFB1A4;  /* medium beige */
+  --color-light3: #A6978A;  /* taupe accent */
+
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-dark1);
+  background-color: var(--color-light1);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*------------------------------------
+  Typography
+------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1em 0;
+  font-family: var(--font-heading);
+  color: var(--color-dark1);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+/*------------------------------------
+  Layout & Containers
+------------------------------------*/
+.container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+section {
+  padding: 3.75rem 0; /* 60px */
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 1.875rem 0; /* 30px */
+  }
+}
+
+/* Alternate section backgrounds */
+.section-light {
+  background-color: var(--color-light1);
+}
+
+.section-alt {
+  background-color: var(--color-light2);
+}
+
+/*------------------------------------
+  Header & Navigation
+------------------------------------*/
+.header {
+  background-color: var(--color-dark1);
+  color: var(--color-light1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+.navbar-brand {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-light1);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu a {
+  color: var(--color-light1);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a:focus {
+  color: var(--color-light3);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-light1);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--color-dark1);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/*------------------------------------
+  Buttons & Links
+------------------------------------*/
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-dark2);
+  color: var(--color-light1);
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-dark1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+/*------------------------------------
+  Forms
+------------------------------------*/
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-light3);
+  border-radius: 0.25rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-dark2);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.contact-details li {
+  margin-bottom: 0.5rem;
+}
+
+/*------------------------------------
+  Hero / Banner
+------------------------------------*/
+.hero {
+  background-color: var(--color-dark2);
+  color: var(--color-light1);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h1,
+.hero p {
+  color: var(--color-light1);
+}
+
+/*------------------------------------
+  Cards / Features
+------------------------------------*/
+.card {
+  background-color: #fff;
+  border: 1px solid var(--color-light3);
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/*------------------------------------
+  Footer
+------------------------------------*/
+.footer {
+  background-color: var(--color-dark2);
+  color: var(--color-light1);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.footer a {
+  color: var(--color-light1);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover,
+.footer a:focus {
+  color: var(--color-light3);
+  text-decoration: underline;
+}
+
+/*------------------------------------
+  Utility & Animation
+------------------------------------*/
+.fade-in {
+  animation: fadeIn 1s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Images */
+img {
+  display: block;
+  max-width: 100%;
+}
+
