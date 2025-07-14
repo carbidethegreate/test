@@ -3,6 +3,7 @@ import re
 from bs4 import BeautifulSoup
 
 ROOT_DOMAIN = "https://gabrielsmithattorney.com"
+OG_IMAGE_URL = "https://imagedelivery.net/MqlML99ManDWvfuYMb9PmQ/5c7f86eb-156c-4128-a9d9-e5697d957100/public"
 
 # gather all html files
 html_files = []
@@ -61,12 +62,12 @@ for path in html_files:
     if desc:
         new_head.append(soup.new_tag('meta', attrs={'property':'og:description', 'content':desc}))
     new_head.append(soup.new_tag('meta', attrs={'property':'og:url', 'content':canonical_url}))
-    new_head.append(soup.new_tag('meta', attrs={'property':'og:image', 'content':f'{ROOT_DOMAIN}/images/og-image.jpg'}))
+    new_head.append(soup.new_tag('meta', attrs={'property':'og:image', 'content':OG_IMAGE_URL}))
     new_head.append(soup.new_tag('meta', attrs={'name':'twitter:card', 'content':'summary_large_image'}))
     new_head.append(soup.new_tag('meta', attrs={'name':'twitter:title', 'content':title}))
     if desc:
         new_head.append(soup.new_tag('meta', attrs={'name':'twitter:description', 'content':desc}))
-    new_head.append(soup.new_tag('meta', attrs={'name':'twitter:image', 'content':f'{ROOT_DOMAIN}/images/og-image.jpg'}))
+    new_head.append(soup.new_tag('meta', attrs={'name':'twitter:image', 'content':OG_IMAGE_URL}))
 
     # Insert new tags at beginning of head
     for tag in reversed(list(new_head.contents)):
