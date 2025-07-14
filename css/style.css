@@ -35,6 +35,28 @@ img {
   height: auto;
 }
 
+/* Accessible skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-dark1);
+  color: var(--color-light1);
+  text-decoration: none;
+  z-index: 1000;
+}
+
 /*------------------------------------
   Typography
 ------------------------------------*/
@@ -301,5 +323,41 @@ select:focus {
 img {
   display: block;
   max-width: 100%;
+}
+
+/* Skip Link for Accessibility */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-light2);
+  color: var(--color-dark1);
+  text-decoration: none;
+}
+
+/* Back to Top Link */
+.back-to-top {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.back-to-top a {
+  color: var(--color-dark1);
+  text-decoration: none;
+}
+
+.back-to-top a:hover,
+.back-to-top a:focus {
+  text-decoration: underline;
 }
 
