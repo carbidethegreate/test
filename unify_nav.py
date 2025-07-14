@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 NAV_TEMPLATE = """
    <div class="navbar container">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="index.html">
      Gabriel Smith Attorney at Law
     </a>
     <button aria-label="Open navigation" class="menu-toggle">
@@ -11,32 +11,32 @@ NAV_TEMPLATE = """
     </button>
     <ul class="navbar-menu">
      <li>
-      <a {home_class} href="/index.html">
+      <a {home_class} href="index.html">
        <i class="fa-solid fa-house" aria-hidden="true"></i> Home
       </a>
      </li>
      <li>
-      <a {practice_class} href="/practice-areas/index.html">
+      <a {practice_class} href="practice-areas/index.html">
        <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i> Practice Areas
       </a>
      </li>
      <li>
-      <a {about_class} href="/about.html">
+      <a {about_class} href="about.html">
        <i class="fa-solid fa-user" aria-hidden="true"></i> About
       </a>
      </li>
      <li>
-      <a {blog_class} href="/resources/blog.html">
+      <a {blog_class} href="resources/blog.html">
        <i class="fa-solid fa-newspaper" aria-hidden="true"></i> Blog
       </a>
      </li>
      <li>
-      <a {faq_class} href="/resources/faq.html">
+      <a {faq_class} href="resources/faq.html">
        <i class="fa-solid fa-circle-question" aria-hidden="true"></i> FAQ
       </a>
      </li>
      <li>
-      <a class="btn{contact_current}" href="/contact.html">
+      <a class="btn{contact_current}" href="contact.html">
        <i class="fa-solid fa-phone" aria-hidden="true"></i> Contact
       </a>
      </li>
