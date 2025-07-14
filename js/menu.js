@@ -2,9 +2,9 @@
 // Toggles visibility of nav links on small screens
 
 function toggleMenu() {
-  const nav = document.querySelector('nav ul');
-  if (nav) {
-    nav.classList.toggle('show');
+  const menu = document.querySelector('.navbar-menu');
+  if (menu) {
+    menu.classList.toggle('active');
   }
 }
 
