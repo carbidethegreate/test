@@ -501,6 +501,26 @@ img {
   color: var(--color-accent);
 }
 
+/*------------------------------------
+  Pre-Footer Callout
+------------------------------------*/
+.pre-footer-cta {
+  background-color: var(--color-dark2);
+  color: var(--color-light1);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.pre-footer-cta h1 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.pre-footer-cta p {
+  margin: 0;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
